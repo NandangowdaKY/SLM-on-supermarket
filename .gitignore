@@ -1,0 +1,19 @@
+# large data (> GitHub's 100 MB limit)
+combined_supermarket_data.csv
+*.bin
+
+# model artefacts
+checkpoints/
+export/
+*.pt
+*.safetensors
+*.gguf
+llama.cpp/
+
+# python / jupyter
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.venv/
+venv/
+data/transactions_corpus_*.txt

@@ -1,0 +1,12 @@
+# PyTorch with CUDA - install first, from the PyTorch index:
+#   pip install torch --index-url https://download.pytorch.org/whl/cu128
+torch>=2.5
+transformers>=4.51
+datasets
+safetensors
+pandas
+numpy
+matplotlib
+tqdm
+ipykernel
+bitsandbytes   # 8-bit AdamW for GPUs with < 12 GB VRAM

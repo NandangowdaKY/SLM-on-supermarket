@@ -1,0 +1,1309 @@
+{
+  "overview": {
+    "rows": 2595732,
+    "total_sales": 8057463.08,
+    "baskets": 276484,
+    "households": 2500,
+    "products": 92339,
+    "stores": 582,
+    "weeks": [
+      1,
+      102
+    ],
+    "days": [
+      1,
+      711
+    ],
+    "units": 3349875
+  },
+  "basket": {
+    "mean": 29.14260166953603,
+    "median": 17.07,
+    "p90": 70.64700000000012,
+    "items_mean": 9.388362436886041,
+    "items_median": 5.0
+  },
+  "household": {
+    "mean_spend": 3222.985232,
+    "median_spend": 2157.75,
+    "mean_trips": 110.5936
+  },
+  "departments": [
+    {
+      "DEPARTMENT": "GROCERY",
+      "sales": 4093814.14,
+      "units": 2194762,
+      "lines": 1646076,
+      "share": 0.5080773066353287
+    },
+    {
+      "DEPARTMENT": "DRUG GM",
+      "sales": 1055358.03,
+      "units": 353844,
+      "lines": 277232,
+      "share": 0.13097894703601917
+    },
+    {
+      "DEPARTMENT": "PRODUCE",
+      "sales": 557452.11,
+      "units": 319993,
+      "lines": 257290,
+      "share": 0.06918456894747571
+    },
+    {
+      "DEPARTMENT": "MEAT",
+      "sales": 548786.81,
+      "units": 119113,
+      "lines": 88416,
+      "share": 0.06810913119318941
+    },
+    {
+      "DEPARTMENT": "KIOSK-GAS",
+      "sales": 544222.28,
+      "units": 221254887,
+      "lines": 22059,
+      "share": 0.06754263402718565
+    },
+    {
+      "DEPARTMENT": "MEAT-PCKGD",
+      "sales": 412436.77,
+      "units": 148148,
+      "lines": 111957,
+      "share": 0.05118692644385037
+    },
+    {
+      "DEPARTMENT": "DELI",
+      "sales": 260866.51,
+      "units": 67026,
+      "lines": 62787,
+      "share": 0.03237576237209392
+    },
+    {
+      "DEPARTMENT": "PASTRY",
+      "sales": 121739.86,
+      "units": 49820,
+      "lines": 38179,
+      "share": 0.015108956602256004
+    },
+    {
+      "DEPARTMENT": "MISC SALES TRAN",
+      "sales": 119960.04,
+      "units": 36080860,
+      "lines": 6050,
+      "share": 0.014888065735946256
+    },
+    {
+      "DEPARTMENT": "NUTRITION",
+      "sales": 97669.04000000001,
+      "units": 43253,
+      "lines": 32164,
+      "share": 0.012121562212606503
+    },
+    {
+      "DEPARTMENT": "SEAFOOD-PCKGD",
+      "sales": 63093.62,
+      "units": 14003,
+      "lines": 11216,
+      "share": 0.007830457226246453
+    },
+    {
+      "DEPARTMENT": "FLORAL",
+      "sales": 39653.340000000004,
+      "units": 5586,
+      "lines": 4524,
+      "share": 0.004921318237054832
+    },
+    {
+      "DEPARTMENT": "COSMETICS",
+      "sales": 32360.37,
+      "units": 7984,
+      "lines": 7692,
+      "share": 0.004016198359049756
+    },
+    {
+      "DEPARTMENT": "SALAD BAR",
+      "sales": 30953.3,
+      "units": 10659,
+      "lines": 9516,
+      "share": 0.003841568951998226
+    },
+    {
+      "DEPARTMENT": "SEAFOOD",
+      "sales": 29496.920000000002,
+      "units": 4555,
+      "lines": 4093,
+      "share": 0.003660819752710552
+    },
+    {
+      "DEPARTMENT": "SPIRITS",
+      "sales": 21670.88,
+      "units": 2290,
+      "lines": 2119,
+      "share": 0.0026895413338958794
+    },
+    {
+      "DEPARTMENT": "MISC. TRANS.",
+      "sales": 10678.69,
+      "units": 3520,
+      "lines": 2351,
+      "share": 0.0013253166528936799
+    },
+    {
+      "DEPARTMENT": "GARDEN CENTER",
+      "sales": 7667.82,
+      "units": 1336,
+      "lines": 720,
+      "share": 0.0009516419652027744
+    },
+    {
+      "DEPARTMENT": "TRAVEL & LEISUR",
+      "sales": 2550.38,
+      "units": 950,
+      "lines": 862,
+      "share": 0.0003165239449040082
+    },
+    {
+      "DEPARTMENT": "CHEF SHOPPE",
+      "sales": 2290.8,
+      "units": 875,
+      "lines": 766,
+      "share": 0.0002843078494130686
+    },
+    {
+      "DEPARTMENT": "RESTAURANT",
+      "sales": 1986.76,
+      "units": 504,
+      "lines": 465,
+      "share": 0.00024657388811764804
+    },
+    {
+      "DEPARTMENT": "COUP/STR & MFG",
+      "sales": 1027.72,
+      "units": 1011,
+      "lines": 817,
+      "share": 0.00012754883141208263
+    },
+    {
+      "DEPARTMENT": "FROZEN GROCERY",
+      "sales": 653.26,
+      "units": 297,
+      "lines": 251,
+      "share": 8.107514654600192e-05
+    },
+    {
+      "DEPARTMENT": "AUTOMOTIVE",
+      "sales": 452.66,
+      "units": 67,
+      "lines": 65,
+      "share": 5.617897289825373e-05
+    },
+    {
+      "DEPARTMENT": "RX",
+      "sales": 159.56,
+      "units": 15,
+      "lines": 14,
+      "share": 1.980275905899652e-05
+    },
+    {
+      "DEPARTMENT": "GM MERCH EXP",
+      "sales": 101.1,
+      "units": 54,
+      "lines": 49,
+      "share": 1.2547373657962822e-05
+    },
+    {
+      "DEPARTMENT": "DAIRY DELI",
+      "sales": 73.23,
+      "units": 77,
+      "lines": 53,
+      "share": 9.088468575396812e-06
+    },
+    {
+      "DEPARTMENT": "CNTRL/STORE SUP",
+      "sales": 49.05,
+      "units": 22,
+      "lines": 21,
+      "share": 6.087524015065049e-06
+    },
+    {
+      "DEPARTMENT": "PHOTO",
+      "sales": 41.400000000000006,
+      "units": 19,
+      "lines": 17,
+      "share": 5.138093664091602e-06
+    },
+    {
+      "DEPARTMENT": "DELI/SNACK BAR",
+      "sales": 36.08,
+      "units": 12,
+      "lines": 11,
+      "share": 4.477836217401569e-06
+    },
+    {
+      "DEPARTMENT": "VIDEO",
+      "sales": 34.769999999999996,
+      "units": 3,
+      "lines": 3,
+      "share": 4.315254026581279e-06
+    },
+    {
+      "DEPARTMENT": "POSTAL CENTER",
+      "sales": 24.01,
+      "units": 28,
+      "lines": 20,
+      "share": 2.979846108087907e-06
+    },
+    {
+      "DEPARTMENT": "VIDEO RENTAL",
+      "sales": 21.46,
+      "units": 11,
+      "lines": 5,
+      "share": 2.663369324430091e-06
+    },
+    {
+      "DEPARTMENT": "PHARMACY SUPPLY",
+      "sales": 16.92,
+      "units": 8,
+      "lines": 6,
+      "share": 2.099916540976568e-06
+    },
+    {
+      "DEPARTMENT": "PORK",
+      "sales": 15.7,
+      "units": 2,
+      "lines": 2,
+      "share": 1.9485041189912593e-06
+    },
+    {
+      "DEPARTMENT": "TOYS",
+      "sales": 9.84,
+      "units": 6,
+      "lines": 5,
+      "share": 1.221228059291337e-06
+    },
+    {
+      "DEPARTMENT": "HBC",
+      "sales": 9.42,
+      "units": 4,
+      "lines": 4,
+      "share": 1.1691024713947556e-06
+    },
+    {
+      "DEPARTMENT": "CHARITABLE CONT",
+      "sales": 7.74,
+      "units": 3,
+      "lines": 2,
+      "share": 9.6060011980843e-07
+    },
+    {
+      "DEPARTMENT": "PROD-WHS SALES",
+      "sales": 7.52,
+      "units": 4,
+      "lines": 4,
+      "share": 9.3329624043403e-07
+    },
+    {
+      "DEPARTMENT": "MEAT-WHSE",
+      "sales": 7.0,
+      "units": 7,
+      "lines": 6,
+      "share": 8.687597982763577e-07
+    },
+    {
+      "DEPARTMENT": "HOUSEWARES",
+      "sales": 2.99,
+      "units": 1,
+      "lines": 1,
+      "share": 3.710845424066157e-07
+    },
+    {
+      "DEPARTMENT": "GRO BAKERY",
+      "sales": 2.18,
+      "units": 2,
+      "lines": 2,
+      "share": 2.7055662289178e-07
+    },
+    {
+      "DEPARTMENT": "ELECT &PLUMBING",
+      "sales": 1.0,
+      "units": 1,
+      "lines": 1,
+      "share": 1.2410854261090824e-07
+    }
+  ],
+  "top_commodities": [
+    {
+      "COMMODITY_DESC": "SOFT DRINKS",
+      "sales": 327647.3,
+      "units": 160637,
+      "lines": 117532,
+      "med_price": 1.5,
+      "dept": "GROCERY",
+      "private": 0.21097233093965898,
+      "share": 0.040663828893399034
+    },
+    {
+      "COMMODITY_DESC": "BEEF",
+      "sales": 312103.22,
+      "units": 65576,
+      "lines": 48726,
+      "med_price": 4.0325,
+      "dept": "MEAT",
+      "private": 0.0985510815581004,
+      "share": 0.03873467577837167
+    },
+    {
+      "COMMODITY_DESC": "FLUID MILK PRODUCTS",
+      "sales": 205356.05,
+      "units": 116192,
+      "lines": 85630,
+      "med_price": 1.89,
+      "dept": "GROCERY",
+      "private": 0.9034917669041224,
+      "share": 0.025486440081832804
+    },
+    {
+      "COMMODITY_DESC": "CHEESE",
+      "sales": 189528.18,
+      "units": 96402,
+      "lines": 74885,
+      "med_price": 1.67,
+      "dept": "GROCERY",
+      "private": 0.6373105428323429,
+      "share": 0.023522066203497886
+    },
+    {
+      "COMMODITY_DESC": "FRZN MEAT/MEAT DINNERS",
+      "sales": 160517.17,
+      "units": 79391,
+      "lines": 56064,
+      "med_price": 2.0,
+      "dept": "GROCERY",
+      "private": 0.024240154109589043,
+      "share": 0.019921552032727403
+    },
+    {
+      "COMMODITY_DESC": "BAG SNACKS",
+      "sales": 148375.16,
+      "units": 80824,
+      "lines": 67190,
+      "med_price": 2.0,
+      "dept": "GROCERY",
+      "private": 0.11364786426551571,
+      "share": 0.01841462486726033
+    },
+    {
+      "COMMODITY_DESC": "BEERS/ALES",
+      "sales": 147344.45,
+      "units": 19863,
+      "lines": 17810,
+      "med_price": 7.49,
+      "dept": "GROCERY",
+      "private": 0.003425042111173498,
+      "share": 0.01828670495130584
+    },
+    {
+      "COMMODITY_DESC": "FROZEN PIZZA",
+      "sales": 146037.25,
+      "units": 67225,
+      "lines": 43362,
+      "med_price": 2.25,
+      "dept": "GROCERY",
+      "private": 0.1112725427793921,
+      "share": 0.01812447026440486
+    },
+    {
+      "COMMODITY_DESC": "BAKED BREAD/BUNS/ROLLS",
+      "sales": 145930.85,
+      "units": 99713,
+      "lines": 83232,
+      "med_price": 1.39,
+      "dept": "GROCERY",
+      "private": 0.5036884851980008,
+      "share": 0.01811126511547106
+    },
+    {
+      "COMMODITY_DESC": "COLD CEREAL",
+      "sales": 111702.42,
+      "units": 41303,
+      "lines": 37870,
+      "med_price": 2.69,
+      "dept": "GROCERY",
+      "private": 0.2548983364140481,
+      "share": 0.013863224552311568
+    },
+    {
+      "COMMODITY_DESC": "DELI MEATS",
+      "sales": 106539.94,
+      "units": 26186,
+      "lines": 25203,
+      "med_price": 3.63,
+      "dept": "DELI",
+      "private": 0.018727929214776017,
+      "share": 0.013222516683253608
+    },
+    {
+      "COMMODITY_DESC": "CIGARETTES",
+      "sales": 96387.83,
+      "units": 16842,
+      "lines": 12319,
+      "med_price": 3.79,
+      "dept": "DRUG GM",
+      "private": 0.0,
+      "share": 0.01196255310672798
+    },
+    {
+      "COMMODITY_DESC": "CHICKEN",
+      "sales": 94342.85,
+      "units": 26042,
+      "lines": 17762,
+      "med_price": 3.42,
+      "dept": "MEAT",
+      "private": 0.0,
+      "share": 0.011708753619259526
+    },
+    {
+      "COMMODITY_DESC": "LUNCHMEAT",
+      "sales": 93066.44,
+      "units": 46291,
+      "lines": 35162,
+      "med_price": 2.0,
+      "dept": "MEAT-PCKGD",
+      "private": 0.27779989761674534,
+      "share": 0.011550340234385536
+    },
+    {
+      "COMMODITY_DESC": "PORK",
+      "sales": 90279.06,
+      "units": 18237,
+      "lines": 14223,
+      "med_price": 4.06,
+      "dept": "MEAT",
+      "private": 0.018420867608802644,
+      "share": 0.011204402564882742
+    },
+    {
+      "COMMODITY_DESC": "SOUP",
+      "sales": 87799.94,
+      "units": 85689,
+      "lines": 46135,
+      "med_price": 1.25,
+      "dept": "GROCERY",
+      "private": 0.20166901484772948,
+      "share": 0.010896722594725187
+    },
+    {
+      "COMMODITY_DESC": "ICE CREAM/MILK/SHERBTS",
+      "sales": 82426.6,
+      "units": 30629,
+      "lines": 27853,
+      "med_price": 2.88,
+      "dept": "GROCERY",
+      "private": 0.4649050371593724,
+      "share": 0.01022984519837229
+    },
+    {
+      "COMMODITY_DESC": "CANDY - PACKAGED",
+      "sales": 75886.23,
+      "units": 44588,
+      "lines": 34177,
+      "med_price": 1.49,
+      "dept": "DRUG GM",
+      "private": 0.03499429440852035,
+      "share": 0.009418129409536184
+    },
+    {
+      "COMMODITY_DESC": "CANNED JUICES",
+      "sales": 74735.18000000001,
+      "units": 35552,
+      "lines": 29149,
+      "med_price": 1.99,
+      "dept": "GROCERY",
+      "private": 0.23908195821469005,
+      "share": 0.009275274271563898
+    },
+    {
+      "COMMODITY_DESC": "REFRGRATD JUICES/DRNKS",
+      "sales": 72179.2,
+      "units": 37668,
+      "lines": 31469,
+      "med_price": 1.79,
+      "dept": "GROCERY",
+      "private": 0.4969017127967206,
+      "share": 0.008958055318821267
+    },
+    {
+      "COMMODITY_DESC": "MEAT - MISC",
+      "sales": 65880.28,
+      "units": 11332,
+      "lines": 9463,
+      "med_price": 5.99,
+      "dept": "MEAT-PCKGD",
+      "private": 0.49920743950121527,
+      "share": 0.008176305537598566
+    },
+    {
+      "COMMODITY_DESC": "COFFEE",
+      "sales": 64555.48,
+      "units": 15206,
+      "lines": 13694,
+      "med_price": 3.99,
+      "dept": "GROCERY",
+      "private": 0.3556302030086169,
+      "share": 0.008011886540347636
+    },
+    {
+      "COMMODITY_DESC": "CRACKERS/MISC BKD FD",
+      "sales": 64528.56,
+      "units": 33059,
+      "lines": 29723,
+      "med_price": 2.0,
+      "dept": "GROCERY",
+      "private": 0.22908185580190424,
+      "share": 0.008008545538380549
+    },
+    {
+      "COMMODITY_DESC": "WATER - CARBONATED/FLVRD DRINK",
+      "sales": 63873.1,
+      "units": 30061,
+      "lines": 21232,
+      "med_price": 1.745,
+      "dept": "GROCERY",
+      "private": 0.2899868123587038,
+      "share": 0.007927197353040804
+    },
+    {
+      "COMMODITY_DESC": "DOMESTIC WINE",
+      "sales": 61592.29,
+      "units": 6794,
+      "lines": 5755,
+      "med_price": 8.99,
+      "dept": "GROCERY",
+      "private": 0.0,
+      "share": 0.0076441293479684175
+    },
+    {
+      "COMMODITY_DESC": "BATH TISSUES",
+      "sales": 60620.23,
+      "units": 16958,
+      "lines": 14051,
+      "med_price": 3.54,
+      "dept": "GROCERY",
+      "private": 0.22888050672549998,
+      "share": 0.007523488398038059
+    },
+    {
+      "COMMODITY_DESC": "SEAFOOD - FROZEN",
+      "sales": 60000.74,
+      "units": 11147,
+      "lines": 8879,
+      "med_price": 4.79,
+      "dept": "SEAFOOD-PCKGD",
+      "private": 0.5904944250478658,
+      "share": 0.007446604396976027
+    },
+    {
+      "COMMODITY_DESC": "DIAPERS & DISPOSABLES",
+      "sales": 59663.7,
+      "units": 5283,
+      "lines": 5008,
+      "med_price": 9.99,
+      "dept": "DRUG GM",
+      "private": 0.3698083067092652,
+      "share": 0.0074047748537744455
+    },
+    {
+      "COMMODITY_DESC": "YOGURT",
+      "sales": 59341.22,
+      "units": 74032,
+      "lines": 44697,
+      "med_price": 0.6,
+      "dept": "GROCERY",
+      "private": 0.36053873861780433,
+      "share": 0.007364752330953281
+    },
+    {
+      "COMMODITY_DESC": "VEGETABLES - SHELF STABLE",
+      "sales": 57690.05,
+      "units": 77503,
+      "lines": 41612,
+      "med_price": 0.6,
+      "dept": "GROCERY",
+      "private": 0.5698115928097665,
+      "share": 0.0071598280286504275
+    },
+    {
+      "COMMODITY_DESC": "BAKED SWEET GOODS",
+      "sales": 55091.48,
+      "units": 31512,
+      "lines": 27853,
+      "med_price": 1.39,
+      "dept": "GROCERY",
+      "private": 0.13284026855275913,
+      "share": 0.0068373232930779996
+    },
+    {
+      "COMMODITY_DESC": "LAUNDRY DETERGENTS",
+      "sales": 55070.25,
+      "units": 9385,
+      "lines": 8852,
+      "med_price": 4.99,
+      "dept": "GROCERY",
+      "private": 0.06450519656574785,
+      "share": 0.00683468846871837
+    },
+    {
+      "COMMODITY_DESC": "CONVENIENT BRKFST/WHLSM SNACKS",
+      "sales": 55069.31,
+      "units": 25968,
+      "lines": 22547,
+      "med_price": 1.84,
+      "dept": "GROCERY",
+      "private": 0.270501618840644,
+      "share": 0.006834571806688315
+    },
+    {
+      "COMMODITY_DESC": "COOKIES/CONES",
+      "sales": 54680.96,
+      "units": 25570,
+      "lines": 22698,
+      "med_price": 2.0,
+      "dept": "GROCERY",
+      "private": 0.2508591065292096,
+      "share": 0.006786374254165369
+    },
+    {
+      "COMMODITY_DESC": "MEAT - SHELF STABLE",
+      "sales": 53608.08,
+      "units": 43201,
+      "lines": 23424,
+      "med_price": 1.0,
+      "dept": "GROCERY",
+      "private": 0.16478825136612021,
+      "share": 0.006653220680968978
+    },
+    {
+      "COMMODITY_DESC": "DOG FOODS",
+      "sales": 53410.97,
+      "units": 19769,
+      "lines": 12093,
+      "med_price": 2.39,
+      "dept": "GROCERY",
+      "private": 0.17572149177209956,
+      "share": 0.006628757646134942
+    },
+    {
+      "COMMODITY_DESC": "CHEESES",
+      "sales": 52299.0,
+      "units": 14420,
+      "lines": 13914,
+      "med_price": 3.2975,
+      "dept": "DELI",
+      "private": 0.07654161276412247,
+      "share": 0.00649075267000789
+    },
+    {
+      "COMMODITY_DESC": "FROZEN MEAT",
+      "sales": 50911.020000000004,
+      "units": 12586,
+      "lines": 10205,
+      "med_price": 3.59,
+      "dept": "MEAT-PCKGD",
+      "private": 0.15463008329250366,
+      "share": 0.006318492495034802
+    },
+    {
+      "COMMODITY_DESC": "INFANT FORMULA",
+      "sales": 50861.79,
+      "units": 6174,
+      "lines": 2885,
+      "med_price": 9.98,
+      "dept": "DRUG GM",
+      "private": 0.07833622183708838,
+      "share": 0.006312382631482067
+    },
+    {
+      "COMMODITY_DESC": "HISPANIC",
+      "sales": 47899.9,
+      "units": 31735,
+      "lines": 23984,
+      "med_price": 1.49,
+      "dept": "GROCERY",
+      "private": 0.22856904603068712,
+      "share": 0.005944786780208244
+    },
+    {
+      "COMMODITY_DESC": "SALD DRSNG/SNDWCH SPRD",
+      "sales": 47585.87,
+      "units": 23260,
+      "lines": 21343,
+      "med_price": 1.99,
+      "dept": "GROCERY",
+      "private": 0.3038466944665698,
+      "share": 0.005905812974572141
+    },
+    {
+      "COMMODITY_DESC": "DINNER MXS:DRY",
+      "sales": 47209.58,
+      "units": 29913,
+      "lines": 19631,
+      "med_price": 1.67,
+      "dept": "GROCERY",
+      "private": 0.24970709591971882,
+      "share": 0.005859112171073082
+    },
+    {
+      "COMMODITY_DESC": "BREAKFAST SAUSAGE/SANDWICHES",
+      "sales": 46085.22,
+      "units": 17224,
+      "lines": 12958,
+      "med_price": 2.5,
+      "dept": "MEAT-PCKGD",
+      "private": 0.16869887328291402,
+      "share": 0.005719569490103081
+    },
+    {
+      "COMMODITY_DESC": "BACON",
+      "sales": 45436.71,
+      "units": 15982,
+      "lines": 11519,
+      "med_price": 2.5,
+      "dept": "MEAT-PCKGD",
+      "private": 0.2686865179269034,
+      "share": 0.005639083859134481
+    },
+    {
+      "COMMODITY_DESC": "POTATOES",
+      "sales": 45169.62,
+      "units": 19074,
+      "lines": 16254,
+      "med_price": 2.99,
+      "dept": "PRODUCE",
+      "private": 0.5725975144579796,
+      "share": 0.005605935708488534
+    },
+    {
+      "COMMODITY_DESC": "CONDIMENTS/SAUCES",
+      "sales": 44856.14,
+      "units": 26827,
+      "lines": 23514,
+      "med_price": 1.49,
+      "dept": "GROCERY",
+      "private": 0.3195117802160415,
+      "share": 0.005567030162550866
+    },
+    {
+      "COMMODITY_DESC": "HAIR CARE PRODUCTS",
+      "sales": 44840.520000000004,
+      "units": 12992,
+      "lines": 12157,
+      "med_price": 2.99,
+      "dept": "DRUG GM",
+      "private": 0.015382084395821338,
+      "share": 0.005565091587115284
+    },
+    {
+      "COMMODITY_DESC": "SALAD MIX",
+      "sales": 44807.03,
+      "units": 20383,
+      "lines": 17093,
+      "med_price": 2.0,
+      "dept": "PRODUCE",
+      "private": 0.030421810097700813,
+      "share": 0.005560935192023244
+    },
+    {
+      "COMMODITY_DESC": "REFRGRATD DOUGH PRODUCTS",
+      "sales": 43518.53,
+      "units": 25155,
+      "lines": 18960,
+      "med_price": 1.69,
+      "dept": "GROCERY",
+      "private": 0.2732594936708861,
+      "share": 0.005401021334869089
+    },
+    {
+      "COMMODITY_DESC": "FRZN VEGETABLE/VEG DSH",
+      "sales": 43410.18,
+      "units": 31833,
+      "lines": 22564,
+      "med_price": 1.25,
+      "dept": "GROCERY",
+      "private": 0.6387165396206347,
+      "share": 0.005387574174277197
+    }
+  ],
+  "brand_share": {
+    "National": 0.7223367568939577,
+    "Private": 0.2776632431060423
+  },
+  "discounts": {
+    "retail_disc": 1398334.84,
+    "coupon_disc": 42611.53999999999,
+    "coupon_match": 7575.810000000001,
+    "share_lines_retail": 0.5019878785637346,
+    "share_lines_coupon": 0.014031494776810548,
+    "share_baskets_coupon": 0.06058578434918476
+  },
+  "sales_by_hour": {
+    "0": 48879.16,
+    "1": 23202.82,
+    "2": 14917.69,
+    "3": 10506.56,
+    "4": 8081.67,
+    "5": 13261.02,
+    "6": 29231.36,
+    "7": 68341.06,
+    "8": 122445.66,
+    "9": 217064.62,
+    "10": 360824.11,
+    "11": 500864.69,
+    "12": 589936.7,
+    "13": 633224.11,
+    "14": 639385.85,
+    "15": 669489.02,
+    "16": 748463.13,
+    "17": 828978.16,
+    "18": 764198.99,
+    "19": 643770.51,
+    "20": 494052.47000000003,
+    "21": 341635.79,
+    "22": 197543.33000000002,
+    "23": 89164.6
+  },
+  "sales_by_week": {
+    "1": 5211.16,
+    "2": 10821.35,
+    "3": 13498.2,
+    "4": 15965.99,
+    "5": 20139.82,
+    "6": 24923.9,
+    "7": 28073.97,
+    "8": 31793.77,
+    "9": 31244.170000000002,
+    "10": 42994.38,
+    "11": 51011.3,
+    "12": 53187.3,
+    "13": 55203.01,
+    "14": 62875.2,
+    "15": 74261.29,
+    "16": 79135.01,
+    "17": 79556.35,
+    "18": 75968.18000000001,
+    "19": 72536.88,
+    "20": 86108.9,
+    "21": 83262.33,
+    "22": 79133.82,
+    "23": 76069.35,
+    "24": 88706.1,
+    "25": 88926.82,
+    "26": 79208.92,
+    "27": 79909.08,
+    "28": 78556.2,
+    "29": 89026.98,
+    "30": 80131.86,
+    "31": 77643.88,
+    "32": 76723.95,
+    "33": 85802.29,
+    "34": 81676.13,
+    "35": 82983.83,
+    "36": 84083.89,
+    "37": 87324.25,
+    "38": 90906.21,
+    "39": 82427.45,
+    "40": 89984.76,
+    "41": 83638.59,
+    "42": 93370.29000000001,
+    "43": 83953.87,
+    "44": 83093.82,
+    "45": 79682.33,
+    "46": 95878.08,
+    "47": 89835.46,
+    "48": 80300.28,
+    "49": 85805.5,
+    "50": 90219.68000000001,
+    "51": 85529.53,
+    "52": 84886.49,
+    "53": 83239.75,
+    "54": 87914.89,
+    "55": 87062.48,
+    "56": 89058.04,
+    "57": 82604.91,
+    "58": 83694.69,
+    "59": 96701.23,
+    "60": 90987.01,
+    "61": 90585.63,
+    "62": 88184.5,
+    "63": 92808.76,
+    "64": 91182.23,
+    "65": 87397.57,
+    "66": 77688.26,
+    "67": 90950.73,
+    "68": 97967.05,
+    "69": 86409.91,
+    "70": 84986.99,
+    "71": 83873.2,
+    "72": 96930.47,
+    "73": 87531.26,
+    "74": 85641.31,
+    "75": 83162.99,
+    "76": 88851.4,
+    "77": 92161.44,
+    "78": 81102.03,
+    "79": 82474.62,
+    "80": 83203.75,
+    "81": 90168.04,
+    "82": 86945.12,
+    "83": 83200.92,
+    "84": 85936.42,
+    "85": 97663.46,
+    "86": 86445.24,
+    "87": 91391.47,
+    "88": 92469.59,
+    "89": 90544.76,
+    "90": 92939.24,
+    "91": 86923.35,
+    "92": 113192.87,
+    "93": 80832.16,
+    "94": 96964.24,
+    "95": 88895.06,
+    "96": 86810.11,
+    "97": 88839.26,
+    "98": 98949.62,
+    "99": 101363.92,
+    "100": 93063.1,
+    "101": 84407.25,
+    "102": 71968.63
+  },
+  "top_stores": {
+    "367": 267614.34,
+    "406": 216781.77,
+    "361": 144698.85,
+    "429": 142391.01,
+    "343": 140455.75,
+    "356": 137588.68,
+    "381": 132488.15,
+    "375": 130396.51,
+    "292": 130005.18000000001,
+    "31782": 121726.54000000001
+  },
+  "display_effect": {
+    "coverage": 0.217192683990489,
+    "promo_share": 0.10509289865055406,
+    "qty_promo": 1.396329817847232,
+    "qty_nopromo": 1.4216873266639403
+  },
+  "mailer_effect": {
+    "coverage": 0.217192683990489,
+    "promo_share": 0.15955036960672364,
+    "qty_promo": 1.4349511046722203,
+    "qty_nopromo": 1.3387424477356573
+  },
+  "demographics_coverage": {
+    "households": 801,
+    "share_sales": 0.5582050101059849
+  },
+  "demographics": {
+    "AGE_DESC": {
+      "35-44": {
+        "sales": 1242146.79,
+        "hh": 194,
+        "baskets": 36626,
+        "per_hh": 6402.81850515464,
+        "basket_value": 33.914344727789
+      },
+      "45-54": {
+        "sales": 1657467.05,
+        "hh": 288,
+        "baskets": 51394,
+        "per_hh": 5755.093923611112,
+        "basket_value": 32.25020527688057
+      },
+      "25-34": {
+        "sales": 777936.25,
+        "hh": 142,
+        "baskets": 22700,
+        "per_hh": 5478.424295774648,
+        "basket_value": 34.27031938325991
+      },
+      "55-64": {
+        "sales": 298229.02,
+        "hh": 59,
+        "baskets": 10057,
+        "per_hh": 5054.729152542373,
+        "basket_value": 29.653874912995924
+      },
+      "19-24": {
+        "sales": 216583.02,
+        "hh": 46,
+        "baskets": 8129,
+        "per_hh": 4708.32652173913,
+        "basket_value": 26.64325501291672
+      },
+      "65+": {
+        "sales": 305354.13,
+        "hh": 72,
+        "baskets": 11433,
+        "per_hh": 4241.029583333333,
+        "basket_value": 26.70813697192338
+      }
+    },
+    "INCOME_DESC": {
+      "250K+": {
+        "sales": 118688.9,
+        "hh": 11,
+        "baskets": 2398,
+        "per_hh": 10789.9,
+        "basket_value": 49.49495412844036
+      },
+      "175-199K": {
+        "sales": 94033.09,
+        "hh": 11,
+        "baskets": 2097,
+        "per_hh": 8548.462727272727,
+        "basket_value": 44.84172150691464
+      },
+      "150-174K": {
+        "sales": 251845.22,
+        "hh": 30,
+        "baskets": 4954,
+        "per_hh": 8394.840666666667,
+        "basket_value": 50.83674202664513
+      },
+      "125-149K": {
+        "sales": 300658.1,
+        "hh": 38,
+        "baskets": 7645,
+        "per_hh": 7912.055263157894,
+        "basket_value": 39.32741661216481
+      },
+      "100-124K": {
+        "sales": 201543.17,
+        "hh": 34,
+        "baskets": 6343,
+        "per_hh": 5927.740294117648,
+        "basket_value": 31.77410846602554
+      },
+      "75-99K": {
+        "sales": 558962.9,
+        "hh": 96,
+        "baskets": 14316,
+        "per_hh": 5822.530208333334,
+        "basket_value": 39.04462838781783
+      },
+      "200-249K": {
+        "sales": 28632.43,
+        "hh": 5,
+        "baskets": 571,
+        "per_hh": 5726.486,
+        "basket_value": 50.14436077057793
+      },
+      "50-74K": {
+        "sales": 1094852.1,
+        "hh": 192,
+        "baskets": 32224,
+        "per_hh": 5702.3546875,
+        "basket_value": 33.976294066534265
+      },
+      "Under 15K": {
+        "sales": 339136.3,
+        "hh": 61,
+        "baskets": 12775,
+        "per_hh": 5559.611475409836,
+        "basket_value": 26.546872798434443
+      },
+      "25-34K": {
+        "sales": 380231.38,
+        "hh": 77,
+        "baskets": 15234,
+        "per_hh": 4938.06987012987,
+        "basket_value": 24.959392149140083
+      },
+      "35-49K": {
+        "sales": 825945.47,
+        "hh": 172,
+        "baskets": 29641,
+        "per_hh": 4802.008546511628,
+        "basket_value": 27.86496643163186
+      },
+      "15-24K": {
+        "sales": 303187.2,
+        "hh": 74,
+        "baskets": 12141,
+        "per_hh": 4097.124324324324,
+        "basket_value": 24.97217692117618
+      }
+    },
+    "MARITAL_STATUS_CODE": {
+      "married": {
+        "sales": 2086459.99,
+        "hh": 340,
+        "baskets": 58090,
+        "per_hh": 6136.647029411764,
+        "basket_value": 35.917713720089516
+      },
+      "unknown marital status": {
+        "sales": 1812411.8,
+        "hh": 344,
+        "baskets": 62822,
+        "per_hh": 5268.638953488372,
+        "basket_value": 28.849953837827513
+      },
+      "single": {
+        "sales": 598844.47,
+        "hh": 117,
+        "baskets": 19427,
+        "per_hh": 5118.328803418804,
+        "basket_value": 30.825370360838008
+      }
+    },
+    "HOMEOWNER_DESC": {
+      "Homeowner": {
+        "sales": 3034987.2800000003,
+        "hh": 504,
+        "baskets": 84814,
+        "per_hh": 6021.80015873016,
+        "basket_value": 35.78403659773151
+      },
+      "Renter": {
+        "sales": 236588.29,
+        "hh": 42,
+        "baskets": 9048,
+        "per_hh": 5633.054523809524,
+        "basket_value": 26.148131078691424
+      },
+      "Probable Owner": {
+        "sales": 54510.17,
+        "hh": 11,
+        "baskets": 2343,
+        "per_hh": 4955.47,
+        "basket_value": 23.265117370892018
+      },
+      "Unknown": {
+        "sales": 1124278.72,
+        "hh": 233,
+        "baskets": 41644,
+        "per_hh": 4825.230557939914,
+        "basket_value": 26.99737585246374
+      },
+      "Probable Renter": {
+        "sales": 47351.8,
+        "hh": 11,
+        "baskets": 2490,
+        "per_hh": 4304.709090909091,
+        "basket_value": 19.01678714859438
+      }
+    },
+    "HH_COMP_DESC": {
+      "2 Adults Kids": {
+        "sales": 1210393.82,
+        "hh": 187,
+        "baskets": 33158,
+        "per_hh": 6472.694224598931,
+        "basket_value": 36.50382471801677
+      },
+      "1 Adult Kids": {
+        "sales": 286967.57,
+        "hh": 47,
+        "baskets": 8696,
+        "per_hh": 6105.692978723405,
+        "basket_value": 32.999950551977925
+      },
+      "2 Adults No Kids": {
+        "sales": 1454092.15,
+        "hh": 255,
+        "baskets": 43221,
+        "per_hh": 5702.322156862745,
+        "basket_value": 33.643186182642694
+      },
+      "Unknown": {
+        "sales": 381803.21,
+        "hh": 73,
+        "baskets": 13635,
+        "per_hh": 5230.1809589041095,
+        "basket_value": 28.001702236890356
+      },
+      "Single Female": {
+        "sales": 705523.89,
+        "hh": 144,
+        "baskets": 25448,
+        "per_hh": 4899.471458333333,
+        "basket_value": 27.724139028607357
+      },
+      "Single Male": {
+        "sales": 458935.62,
+        "hh": 95,
+        "baskets": 16181,
+        "per_hh": 4830.901263157894,
+        "basket_value": 28.362624065261727
+      }
+    },
+    "HOUSEHOLD_SIZE_DESC": {
+      "5+": {
+        "sales": 442128.61,
+        "hh": 66,
+        "baskets": 10551,
+        "per_hh": 6698.918333333333,
+        "basket_value": 41.90395317979338
+      },
+      "4": {
+        "sales": 350484.35,
+        "hh": 53,
+        "baskets": 9373,
+        "per_hh": 6612.912264150943,
+        "basket_value": 37.392974501226924
+      },
+      "3": {
+        "sales": 660585.57,
+        "hh": 109,
+        "baskets": 20326,
+        "per_hh": 6060.418073394495,
+        "basket_value": 32.49953606218636
+      },
+      "2": {
+        "sales": 1761239.09,
+        "hh": 318,
+        "baskets": 53845,
+        "per_hh": 5538.487704402516,
+        "basket_value": 32.709426873433
+      },
+      "1": {
+        "sales": 1283278.64,
+        "hh": 255,
+        "baskets": 46244,
+        "per_hh": 5032.46525490196,
+        "basket_value": 27.750165210621915
+      }
+    },
+    "KID_CATEGORY_DESC": {
+      "2": {
+        "sales": 405840.94,
+        "hh": 60,
+        "baskets": 11200,
+        "per_hh": 6764.015666666667,
+        "basket_value": 36.235798214285715
+      },
+      "3+": {
+        "sales": 465168.96,
+        "hh": 69,
+        "baskets": 11358,
+        "per_hh": 6741.579130434783,
+        "basket_value": 40.9551822503962
+      },
+      "1": {
+        "sales": 669721.36,
+        "hh": 114,
+        "baskets": 20337,
+        "per_hh": 5874.748771929824,
+        "basket_value": 32.931177656488174
+      },
+      "None/Unknown": {
+        "sales": 2956985.0,
+        "hh": 558,
+        "baskets": 97444,
+        "per_hh": 5299.256272401433,
+        "basket_value": 30.345480481096835
+      }
+    }
+  }
+}

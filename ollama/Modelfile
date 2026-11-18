@@ -1,0 +1,25 @@
+# SuperMart SLM - Ollama import
+#   1. run notebook 6 (writes ollama/supermart-slm-q8_0.gguf)
+#   2. cd ollama
+#      ollama create supermart-slm -f Modelfile
+#      ollama run supermart-slm
+FROM ./supermart-slm-q8_0.gguf
+
+# ChatML - exactly the format used for supervised fine-tuning
+TEMPLATE """{{- if .System }}<|im_start|>system
+{{ .System }}<|im_end|>
+{{ end }}{{- range .Messages }}<|im_start|>{{ .Role }}
+{{ .Content }}<|im_end|>
+{{ end }}<|im_start|>assistant
+"""
+
+SYSTEM """You are SuperMart SLM, a small language model trained from scratch to answer questions about supermarket retail analytics: sales, products, departments, discounts, baskets, customer demographics, gross margin, pricing, payment methods and tax. Answer concisely and use the numbers from the SuperMart transaction dataset when relevant."""
+
+PARAMETER stop "<|im_end|>"
+PARAMETER stop "<|im_start|>"
+PARAMETER stop "<|endoftext|>"
+PARAMETER num_ctx 512
+PARAMETER temperature 0.2
+PARAMETER top_p 0.9
+PARAMETER repeat_penalty 1.1
+PARAMETER num_predict 256
