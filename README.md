@@ -45,6 +45,7 @@ Stage A: baskets (pre-training from scratch) ─► Stage B: research papers ─
 | `5_slm_from_scratch_qwen.ipynb` | first experiment: Qwen3 SLM on TinyStories (original run, unchanged) |
 | `6_supermart_slm_end_to_end.ipynb` | **main notebook**: data → training → evaluation → GGUF |
 | `ollama/Modelfile` | Ollama import (ChatML template, system prompt, stop tokens) |
+| `app/server.py`, `app/index.html` | local chat web page on http://localhost:8000 (talks to Ollama; standard library only) |
 
 ## 1. Data collection
 
@@ -217,6 +218,20 @@ ollama run supermart-slm
 
 Ask questions the model was trained on (see `data/sft_train.jsonl`), e.g. *What is the average basket size?*,
 *What time of day do customers shop the most?*, *How does spending vary by age group?*, *Explain RFM analysis.*
+
+## 9. Chat in the browser (localhost)
+
+After the Ollama step above, start the local web app from the repository root (Python standard library only,
+no installs):
+
+```bash
+python app/server.py
+```
+
+Then open **http://localhost:8000**. The page shows example questions the model was trained on (click one, or
+type your own), streams the answer as it is generated, and shows whether Ollama and the `supermart-slm` model
+are available. Each question is sent on its own, matching how the model was fine-tuned. Stop with **Ctrl + C**.
+Use `--port 9000` for another port. Ollama itself also serves an API at `http://localhost:11434`.
 
 ## Limitations
 
