@@ -4,6 +4,14 @@ AIML-C Design Thinking project. A ~340M-parameter language model with the **Qwen
 from scratch** (no pretrained weights) on supermarket transaction data and retail research papers, and
 served as a local chat assistant with **Ollama**.
 
+## Links
+
+| What | Where |
+|---|---|
+| Trained model (safetensors + GGUF + Modelfile) | https://huggingface.co/nandangowda/supermart-slm |
+| Dataset (train / validation / test) | https://huggingface.co/datasets/nandangowda/supermarket-sales-qa |
+| Ollama chat demo | `ollama run supermart-slm` (see section 7) |
+
 ```
 research PDFs ─► Markdown ─► design_thinking_merged.jsonl ─┐   clean_jsonl.py
                                                             ├─► build_dataset.py ─► pretrain_corpus.jsonl
