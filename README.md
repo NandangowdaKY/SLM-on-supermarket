@@ -14,11 +14,13 @@ served as a local chat assistant with **Ollama**.
 
 ```
 research PDFs ─► Markdown ─► design_thinking_merged.jsonl ─┐   clean_jsonl.py
-                                                            ├─► build_dataset.py ─► pretrain_corpus.jsonl
-combined_supermarket_data.csv (2.6M rows) ──────────────────┘                    └► sft_train/val.jsonl
-                                                                                     dataset_stats.json
-276k baskets as text ─► Stage A: pre-training from scratch ─► Stage B: domain pre-training ─► Stage C: chat SFT
-            ─► slm/export.py (Qwen3ForCausalLM safetensors) ─► convert_to_gguf.py ─► Ollama chat demo
+                                                            ├─► build_dataset.py ─► transactions_corpus (276k baskets)
+combined_supermarket_data.csv (2.6M rows) ──────────────────┘                    ├► pretrain_corpus.jsonl
+                                                                                 ├► sft_train/val.jsonl
+                                                                                 └► dataset_stats.json
+Stage A: baskets (pre-training from scratch) ─► Stage B: research papers ─► Stage C: chat Q&A fine-tuning
+   ─► slm/export.py (Qwen3ForCausalLM safetensors) ─► convert_to_gguf.py ─► Ollama chat demo
+   ─► Hugging Face: model + dataset (train / validation / test)
 ```
 
 ## Repository layout
@@ -37,6 +39,7 @@ combined_supermarket_data.csv (2.6M rows) ────────────�
 | `scripts/build_dataset.py` | CSV statistics → corpus + Q&A |
 | `scripts/verify_export.py` | proves the exported model equals the trained model |
 | `scripts/convert_to_gguf.py` | safetensors → GGUF (Q8_0) for Ollama, using the `gguf` package |
+| `scripts/make_hf_dataset.py` | builds the Hugging Face dataset folder (train / validation / test parquet) |
 | `slm/model.py` | Qwen3 model (GQA, QK-RMSNorm, RoPE, SwiGLU, RMSNorm) |
 | `slm/export.py` | checkpoint → `Qwen3ForCausalLM` safetensors (input for GGUF conversion) |
 | `5_slm_from_scratch_qwen.ipynb` | first experiment: Qwen3 SLM on TinyStories (original run, unchanged) |
@@ -86,6 +89,22 @@ spending by age, income, marital status, household type/size, kids, home ownersh
   paper summaries and model identity. Every number in an answer is computed from the data. Paraphrases of a
   fact share a `group` and are never split across train/validation.
 
+### Train / validation / test record counts
+
+A **basket** is one shopping trip — everything one household bought in one visit (one checkout receipt).
+The CSV's 2,595,732 item rows group into 276,484 baskets.
+
+| Data | One record = | Train | Validation | Test |
+|---|---|---|---|---|
+| Q&A (fine-tuning, stage C) | one chat conversation | 452 (223 facts) | 34 (13 facts) | 33 (17 facts) |
+| Baskets (pre-training, stage A) | one shopping trip as text | 262,659 | 6,912 | 6,913 |
+
+Validation and test contain only records the model never trained on. Baskets are split by time (the last 5 %
+are held out); Q&A is split by fact. During training the held-out Q&A (validation + test, 67 conversations) and
+held-out baskets were evaluated together as one validation set; neither was used to choose the model (the final
+checkpoint is published). `python scripts/make_hf_dataset.py --out <folder>` writes these splits as parquet
+files — published at [nandangowda/supermarket-sales-qa](https://huggingface.co/datasets/nandangowda/supermarket-sales-qa).
+
 Example:
 ```json
 {"messages": [
@@ -121,10 +140,33 @@ Fixes compared with notebook 5: cell order (config before model), `min_lr` was l
 (so the cosine "decay" increased the LR), scheduler stepped per micro-batch, no EOS between documents, vocabulary
 too small for chat tokens, pure-bf16 weights.
 
-Evaluation in the notebook: train/val loss curves, validation perplexity, numeric fact recall (share of numbers
-in the reference answer reproduced by the model) on seen vs. unseen facts, and sample chats.
+## 6. Results
 
-## 6. Setup
+Trained on one RTX 4050 Laptop GPU (6 GB), about 7 hours in total.
+
+| Stage | Final train loss | Final validation loss | Best validation loss | Validation perplexity |
+|---|---|---|---|---|
+| A — baskets (pre-training from scratch) | 0.455 | 0.529 | 0.529 | 1.7 |
+| B — research papers (domain) | 1.317 | 6.635 | 5.766 | 761 |
+| C — chat Q&A (fine-tuning) | 0.011 | 2.871 | 1.927 | 17.7 |
+
+**Numeric fact recall** — share of the numbers in the reference answer that the model reproduces
+(greedy decoding):
+
+| Questions | Recall |
+|---|---|
+| Seen in training (sample of 50) | **95.3 %** |
+| Never seen (held-out validation + test) | **4.8 %** |
+
+What this means:
+* Stage A learned the structure of the basket data well (train and validation loss are close).
+* Stage B over-fits: 11 papers are far too little text for a model of this size.
+* Stage C memorises the trained facts almost perfectly, which is what the chat demo relies on, but it does not
+  generalise to facts it never saw — it answers them confidently and wrongly.
+
+The notebook also shows loss curves for all three stages and sample chats.
+
+## 7. Setup (to re-train)
 
 ```bash
 python -m venv C:\Users\<you>\venvs\supermart-slm
@@ -142,20 +184,39 @@ python scripts/clean_jsonl.py
 python scripts/build_dataset.py
 ```
 
-## 7. Ollama chat demo
+To rebuild the Hugging Face dataset folder (train / validation / test parquet):
+```bash
+python scripts/make_hf_dataset.py --out HF-upload/dataset
+```
+
+The CSV is not in this repository (400 MB) — download it from the
+[dataset repo](https://huggingface.co/datasets/nandangowda/supermarket-sales-qa) (`source/combined_supermarket_data.csv`)
+and place it in the project root before rebuilding the data.
+
+## 8. Ollama chat demo
 
 The notebook converts the final checkpoint to the standard `Qwen3ForCausalLM` layout (`slm/export.py`; the
 only difference, the √d_model embedding scale, is folded into the embedding matrix — `scripts/verify_export.py`
 checks the logits match exactly), then to GGUF with `scripts/convert_to_gguf.py` (Q8_0, 367 MB): `ollama/supermart-slm-q8_0.gguf`.
 
+The GGUF is too large for GitHub, so without re-training, download the trained model from Hugging Face:
+
+1. Install Ollama from https://ollama.com/download.
+2. Open https://huggingface.co/nandangowda/supermart-slm/tree/main and download `supermart-slm-q8_0.gguf`
+   into this repository's `ollama/` folder (next to `Modelfile`). Or with the Hugging Face CLI:
+   `hf download nandangowda/supermart-slm supermart-slm-q8_0.gguf --local-dir ollama`
+3. Import and chat:
+
 ```bash
-# install Ollama from https://ollama.com/download, then:
 cd ollama
 ollama create supermart-slm -f Modelfile
 ollama run supermart-slm
 >>> Which departments generate the most sales?
 >>> What is gross margin?
 ```
+
+Ask questions the model was trained on (see `data/sft_train.jsonl`), e.g. *What is the average basket size?*,
+*What time of day do customers shop the most?*, *How does spending vary by age group?*, *Explain RFM analysis.*
 
 ## Limitations
 
