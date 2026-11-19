@@ -43,7 +43,8 @@ Stage A: baskets (pre-training from scratch) ─► Stage B: research papers ─
 | `slm/model.py` | Qwen3 model (GQA, QK-RMSNorm, RoPE, SwiGLU, RMSNorm) |
 | `slm/export.py` | checkpoint → `Qwen3ForCausalLM` safetensors (input for GGUF conversion) |
 | `5_slm_from_scratch_qwen.ipynb` | first experiment: Qwen3 SLM on TinyStories (original run, unchanged) |
-| `6_supermart_slm_end_to_end.ipynb` | **main notebook**: data → training → evaluation → GGUF |
+| `6_supermart_slm_end_to_end.ipynb` | **main notebook — the complete pipeline with all code inline**: cleaning → dataset build → statistics → train/val/test files → tokenizer → model → 3-stage training → evaluation → export → GGUF → Ollama → question test → browser chat |
+| `runs/6_supermart_slm_end_to_end_training_run_2026-11-18.ipynb` | the executed training run (18 Nov 2026, RTX 4050 Laptop, ~7 h) with every live training log line, kept unchanged |
 | `ollama/Modelfile` | Ollama import (ChatML template, system prompt, stop tokens) |
 | `app/server.py`, `app/index.html` | local chat web page on http://localhost:8000 (talks to Ollama; standard library only) |
 
@@ -126,6 +127,10 @@ Example:
 | Parameters | ~340M (233M of them in the untied embedding + LM head) |
 
 ## 5. Training (local GPU) — `6_supermart_slm_end_to_end.ipynb`
+
+The notebook contains every step's code; the files in `scripts/`, `slm/` and `app/` are the same code as standalone
+command-line tools. With `RETRAIN = False` (default) it loads the trained checkpoints and prints their saved loss
+histories; set `RETRAIN = True` to train all three stages again.
 
 | Stage | Data | Objective | Default steps |
 |---|---|---|---|
