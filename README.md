@@ -44,7 +44,7 @@ Stage A: baskets (pre-training from scratch) ─► Stage B: research papers ─
 | `slm/export.py` | checkpoint → `Qwen3ForCausalLM` safetensors (input for GGUF conversion) |
 | `5_slm_from_scratch_qwen.ipynb` | first experiment: Qwen3 SLM on TinyStories (original run, unchanged) |
 | `6_supermart_slm_end_to_end.ipynb` | **main notebook — the complete pipeline with all code inline**: cleaning → dataset build → statistics → train/val/test files → tokenizer → model → 3-stage training → evaluation → export → GGUF → Ollama → question test → browser chat |
-| `runs/6_supermart_slm_end_to_end_training_run_2026-11-18.ipynb` | the executed training run (18 Nov 2026, RTX 4050 Laptop, ~7 h) with every live training log line, kept unchanged |
+| `runs/6_supermart_slm_end_to_end_training_run_2026-11-18.ipynb` | the executed training run (18 Nov 2026, RTX 4050 Laptop, ~4.6 h) with every live training log line, kept unchanged |
 | `ollama/Modelfile` | Ollama import (ChatML template, system prompt, stop tokens) |
 | `app/server.py`, `app/index.html` | local chat web page on http://localhost:8000 (talks to Ollama; standard library only) |
 
@@ -84,11 +84,12 @@ spending by age, income, marital status, household type/size, kids, home ownersh
 
 * **`transactions_corpus_{train,val}.txt`** — every basket as one line: store, week/day/time, household
   demographics, each item with department, brand type, size, quantity, price and discount, and the basket total.
-  This is the main pre-training corpus — the model is trained **only on our own data** (no TinyStories).
+  This is the main pre-training corpus — no general-English corpus (such as TinyStories) is used.
 * **`pretrain_corpus.jsonl`** — the 11 cleaned papers + a retail glossary + data-insight paragraphs.
 * **`sft_train.jsonl` / `sft_val.jsonl`** — ~520 ChatML conversations (253 distinct facts with 1–3
   question paraphrases each): CSV statistics, glossary definitions (gross margin, markup, RFM, GST, BNPL…),
-  paper summaries and model identity. Every number in an answer is computed from the data. Paraphrases of a
+  abstracts of the research papers and model identity. Every number in a sales answer is computed from the data;
+glossary definitions and question templates were written with AI. Paraphrases of a
   fact share a `group` and are never split across train/validation.
 
 ### Train / validation / test record counts
@@ -134,9 +135,9 @@ histories; set `RETRAIN = True` to train all three stages again.
 
 | Stage | Data | Objective | Default steps |
 |---|---|---|---|
-| A | `transactions_corpus_*.txt`: all 276,484 baskets written as text (~100M tokens, last 5 % by time = validation) | next-token prediction, learning language from our own data | 4,000 on 6 GB (≈33M tokens), ≈4.5 h |
-| B | `pretrain_corpus.jsonl` (90/10 split per doc) | next-token prediction, domain adaptation | 800 on 6 GB, ≈30 min |
-| C | `sft_*.jsonl` | next-token loss on **assistant tokens only** | 800 on 6 GB, ≈1.5 h |
+| A | `transactions_corpus_*.txt`: all 276,484 baskets written as text (~100M tokens, last 5 % by time = validation) | next-token prediction, learning the language of the basket data | 4,000 on 6 GB (≈33M tokens), ≈3.9 h |
+| B | `pretrain_corpus.jsonl` (90/10 split per doc) | next-token prediction, domain adaptation | 800 on 6 GB, ≈22 min |
+| C | `sft_*.jsonl` | next-token loss on **assistant tokens only** | 800 on 6 GB, ≈20 min |
 
 Optimiser: AdamW (β 0.9/0.95, weight decay 0.1), linear warm-up + cosine decay, grad-clip 1.0, bf16 autocast
 with fp32 master weights. On GPUs with < 12 GB (e.g. RTX 4050 Laptop, 6 GB) the notebook automatically
@@ -148,7 +149,7 @@ too small for chat tokens, pure-bf16 weights.
 
 ## 6. Results
 
-Trained on one RTX 4050 Laptop GPU (6 GB), about 7 hours in total.
+Trained on one RTX 4050 Laptop GPU (6 GB), about 4.6 hours in total.
 
 | Stage | Final train loss | Final validation loss | Best validation loss | Validation perplexity |
 |---|---|---|---|---|
@@ -162,13 +163,13 @@ Trained on one RTX 4050 Laptop GPU (6 GB), about 7 hours in total.
 | Questions | Recall |
 |---|---|
 | Seen in training (sample of 50) | **95.3 %** |
-| Never seen (held-out validation + test) | **4.8 %** |
+| Held out of chat fine-tuning (validation + test) | **4.8 %** |
 
 What this means:
 * Stage A learned the structure of the basket data well (train and validation loss are close).
 * Stage B over-fits: 11 papers are far too little text for a model of this size.
 * Stage C memorises the trained facts almost perfectly, which is what the chat demo relies on, but it does not
-  generalise to facts it never saw — it answers them confidently and wrongly.
+  answer the held-out questions — it answers them confidently and wrongly. The answers to 57 of the 67 held-out questions also appear in the stage B domain corpus (about 38 of them in its training part), because that corpus was built before the Q&A split. So these questions were not seen as chat examples, but many of their facts were seen as text.
 
 The notebook also shows loss curves for all three stages and sample chats.
 
@@ -243,3 +244,15 @@ Use `--port 9000` for another port. Ollama itself also serves an API at `http://
 A small model trained from scratch on a narrow domain: it reliably reproduces facts it was fine-tuned on, but
 can invent numbers for questions outside them. Research-paper text extracted from PDFs still contains some
 words without spaces. Not for real financial decisions.
+
+## Known issues
+
+* **Leak between stages:** The answers to 57 of the 67 held-out questions also appear in the stage B domain corpus (about 38 of them in its training part), because that corpus was built before the Q&A split. So these questions were not seen as chat examples, but many of their facts were seen as text.
+* **Wrong identity answer:** asked "How were you trained?", the model says it was pre-trained on general English
+  text. That is false (it was pre-trained on supermarket baskets) and comes from an outdated training answer.
+
+## Use of AI
+
+An AI assistant (Claude, Anthropic) wrote most of the code, the glossary definitions, the question templates and
+the figures, and drafted the documentation. The team supplied the data and the starting notebook, directed the work,
+ran the training on their own laptop (18 Nov 2026) and published the results.
